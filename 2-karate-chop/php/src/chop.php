@@ -16,6 +16,7 @@ function chopArray(
 		else
 			$right = $middle - 1;
 	}
+
 	return -1;
 }
 
