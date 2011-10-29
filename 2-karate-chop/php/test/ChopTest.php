@@ -7,7 +7,8 @@ class ChopTest extends PHPUnit_Framework_TestCase {
 	public function test_all(
 	) {
 		$implementations = array(
-			new IterativeChop()
+			new IterativeChop(),
+			new RecursiveIterativeChop()
 		);
 		foreach ($implementations as $imp) {
 			$this->assertEquals(-1, $imp->chopArray(3, array()));
