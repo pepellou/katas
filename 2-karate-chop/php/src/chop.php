@@ -64,7 +64,16 @@ class RecursiveChop extends Chop {
 		$toSearch,
 		$values
 	) {
-		return -1;
+		$count = count($values);
+		if ($count == 0)
+			return -1;
+		if ($count == 1)
+			return ($values[0] == $toSearch) ? 0 : -1;
+		$middle = round($count / 2);
+		if ($toSearch < $values[$middle])
+			return $this->chopArray($toSearch, array_slice($values, 0, $middle));
+		$right = $this->chopArray($toSearch, array_slice($values, $middle));
+		return ($right == -1) ? -1 : $middle + $right;
 	}
 
 }
