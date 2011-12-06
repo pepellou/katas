@@ -65,8 +65,6 @@ class RecursiveChop extends Chop {
 		$values
 	) {
 		$count = count($values);
-		if ($count == 0)
-			return -1;
 		if ($count == 1)
 			return ($values[0] == $toSearch) ? 0 : -1;
 		$mid = round($count / 2);
